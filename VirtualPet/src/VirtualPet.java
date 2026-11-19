@@ -46,7 +46,7 @@ public class VirtualPet {
         }
     }
     public void updateStatus(){
-        if(energy > 0 && energy < 0 && happiness > 0 && happiness < 10){
+        if(energy > 0 && energy < 10 && happiness > 0 && happiness < 10){
             energy--;
             happiness--;
         }
