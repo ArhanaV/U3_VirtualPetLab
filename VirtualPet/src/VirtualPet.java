@@ -17,48 +17,12 @@ public class VirtualPet {
         return name;
     }
 
-    public int getInitialWeight(){
-        return initialWeight;
-    }
-
-    public int getAgeYears(){
-        return ageYears;
-    }
-
-    public int getAgeMonths(){
-        return ageMonths;
-    }
-
     public int getHappinessLevel(){
         return happiness;
     }
 
-    public int getEnergy(){
+    public int getEnergyLevel(){
         return energy;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setInitialWeight(int initialWeight){
-        this.initialWeight = initialWeight;
-    }
-
-    public void setAgeYears(int ageYears){
-        this.ageYears = ageYears;
-    }
-
-    public void setAgeMonths(int ageMonths){
-        this.ageMonths = ageMonths;
-    }
-
-    public void setHappinessLevel(int happiness){
-        this.happiness = happiness;
-    }
-
-    public void setEnergy(int energy){
-        this.energy = energy;
     }
 
     public String toString(){
@@ -82,6 +46,14 @@ public class VirtualPet {
         }
     }
     public void updateStatus(){
-        
+        if(energy > 0 && energy < 0 && happiness > 0 && happiness < 10){
+            energy--;
+            happiness--;
+        }
+        ageMonths++;
+        if(ageMonths == 12){
+            ageYears++;
+            this.ageMonths = 0;
+        }
     }
 }
